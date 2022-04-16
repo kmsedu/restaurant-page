@@ -169,20 +169,21 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 30px;
   height: 80px;
 }
 
 .menu-section-header img {
-  width: 140px;
-  height: 80px;
+  width: 120px;
+  height: 90px;
   object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 30px;
 }
 
 .menu-section-heading {
   flex: 1;
   font-size: 1.4rem;
-  align-self: flex-end;
+  align-self: center;
   font-weight: 800;
 }
 

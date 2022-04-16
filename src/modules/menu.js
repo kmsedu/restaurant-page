@@ -1,4 +1,6 @@
-import menuImage from '../images/menu-item-1.jpg';
+import nigiriImage from '../images/menu-item-1.jpg';
+import rollImage from '../images/menu-item-2.png';
+import hotDishImage from '../images/menu-item-3.png'
 
 const SECTION_CLASS_NAMES = [
   'menu-roll', 
@@ -75,51 +77,45 @@ const menuBox = document.createElement('div');
 menuBox.classList.add('menu-box');
 makeSections(SECTION_CLASS_NAMES, menuBox);
 
+mainWrapper.append(...[heading, description, menuBox]);
+
 const rollSection = menuBox.querySelector('#menu-roll-section');
-populateSection(rollSection, 'Rolls', ROLL_SECTION_MENU_OPTIONS, true);
+populateSection(rollSection, 'Rolls', ROLL_SECTION_MENU_OPTIONS, rollImage);
 
 const nigiriSection = menuBox.querySelector('#menu-nigiri-section');
-populateSection(nigiriSection, 'Nigiri', NIGIRI_SECTION_MENU_OPTIONS, true);
+populateSection(nigiriSection, 'Nigiri', NIGIRI_SECTION_MENU_OPTIONS, nigiriImage);
 
 const hotDishesSection = menuBox.querySelector('#menu-hot-dishes-section');
-populateSection(hotDishesSection, 'Hot Dishes', HOT_DISHES_SECTION_MENU_OPTIONS, true);
+populateSection(hotDishesSection, 'Hot Dishes', HOT_DISHES_SECTION_MENU_OPTIONS, hotDishImage);
 
 const drinksAndDessertsSection = menuBox.querySelector('#menu-drinks-desserts-section')
 
 const drinksSection = document.createElement('div')
 drinksSection.classList.add('drinks');
-populateSection(drinksSection, 'Drinks', DRINKS_SECTION_MENU_OPTIONS, false);
+populateSection(drinksSection, 'Drinks', DRINKS_SECTION_MENU_OPTIONS);
 
 const dessertsSection = document.createElement('div')
 dessertsSection.classList.add('desserts');
-populateSection(dessertsSection, 'Dessert', DESSERT_SECTION_MENU_OPTIONS, false);
-
+populateSection(dessertsSection, 'Dessert', DESSERT_SECTION_MENU_OPTIONS);
 
 drinksAndDessertsSection.append(...[drinksSection, dessertsSection]);
-mainWrapper.append(...[heading, description, menuBox]);
-
-export default mainWrapper;
-
-
-
 
 function makePricelist(menuOptions, parentNode) {
   for (const pair of Object.entries(menuOptions)) {
     const menuOption = document.createElement('li');
-    const menuOptionName = document.createElement('p');
-    const menuOptionPrice = document.createElement('p');
-
     menuOption.classList.add('menu-option');
-    menuOptionName.classList.add('menu-option-name');
-    menuOptionPrice.classList.add('menu-option-price');
 
+    parentNode.append(menuOption);
+
+    const menuOptionName = document.createElement('p');
+    menuOptionName.classList.add('menu-option-name');
     menuOptionName.textContent = pair[0];
+
+    const menuOptionPrice = document.createElement('p');
+    menuOptionPrice.classList.add('menu-option-price');
     menuOptionPrice.textContent = pair[1];
 
-    menuOption.appendChild(menuOptionName);
-    menuOption.appendChild(menuOptionPrice);
-
-    parentNode.appendChild(menuOption);
+    menuOption.append(...[menuOptionName, menuOptionPrice]);
   }
 }
 
@@ -130,36 +126,36 @@ function makeSections(sectionClassNames, parentNode) {
     section.classList.add('menu-section');
     section.id = `${className}-section`;
 
-    parentNode.appendChild(section);
+    parentNode.append(section);
   }
 }
 
 function populateSection(section, heading, menuOptions, image) {
   const header = document.createElement('div');
-  const headingText = document.createElement('h3');
-  const headingImage = new Image();
-  const body = document.createElement('div');
-  const priceList = document.createElement('ul');
-
-  makePricelist(menuOptions, priceList);
-
-  priceList.classList.add('menu-section-pricelist');
-  body.classList.add('menu-section-body');
-
-  body.appendChild(priceList);
-
   header.classList.add('menu-section-header');
 
-  headingText.textContent = heading;
+  const headingText = document.createElement('h3');
   headingText.classList.add('menu-section-heading');
+  headingText.textContent = heading;
 
-  header.appendChild(headingText);
+  header.append(headingText);
 
   if (image) {
-    headingImage.src = menuImage;
-    header.appendChild(headingImage);
+    const headingImage = new Image();
+    headingImage.src = image;
+    header.append(headingImage);
   }
 
-  section.appendChild(header);
-  section.appendChild(body);
+  const body = document.createElement('div');
+  body.classList.add('menu-section-body');
+
+  const priceList = document.createElement('ul');
+  priceList.classList.add('menu-section-pricelist');
+  makePricelist(menuOptions, priceList);
+
+  body.append(priceList);
+
+  section.append(...[header, body]);
 }
+
+export default mainWrapper;

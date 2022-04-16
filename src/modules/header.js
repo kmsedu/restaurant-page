@@ -1,29 +1,26 @@
-export default (() => {
-  const mainWrapper = document.createElement('header');
-  const pageHeading = document.createElement('h1');
-  const navigationBar = document.createElement('div');
-  const navigationLinkList = document.createElement('nav');
+const mainWrapper = document.createElement('header');
+mainWrapper.classList.add('topbar')
 
-  mainWrapper.classList.add('topbar')
-  navigationBar.classList.add('navbar');
-  navigationLinkList.classList.add('nav-container');
+const pageHeading = document.createElement('h1');
+pageHeading.textContent = "Restaurant Page";
 
-  pageHeading.textContent = "Restaurant Page";
+const navigationBar = document.createElement('div');
+navigationBar.classList.add('navbar');
 
-  for (let element of ['Home', 'Menu', 'About', 'Contact']) {
-    const listMember = document.createElement('li');
-    const link = document.createElement('a');
-    
-    link.href = "#";
-    link.textContent = element;
+mainWrapper.append(...[pageHeading, navigationBar]);
 
-    listMember.appendChild(link);
-    navigationLinkList.appendChild(listMember);
-  }
+const navigationLinkList = document.createElement('nav');
+navigationLinkList.classList.add('nav-container');
+for (let element of ['Home', 'Menu', 'About', 'Contact']) {
+  const listMember = document.createElement('li');
+  const link = document.createElement('a');
 
-  navigationBar.appendChild(navigationLinkList);
-  mainWrapper.appendChild(pageHeading);
-  mainWrapper.appendChild(navigationBar);
+  link.href = "#";
+  link.textContent = element;
 
-  return mainWrapper;
-})();
+  listMember.append(link);
+  navigationLinkList.append(listMember);
+}
+navigationBar.append(navigationLinkList);
+
+export default mainWrapper;

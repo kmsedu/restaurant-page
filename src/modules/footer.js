@@ -1,32 +1,32 @@
 import Icon from '../images/GitHub-Mark-Light-32px.png'
 
-export default (() => {
-  const mainWrapper = document.createElement('footer');
-  const container = document.createElement('div');
-  const emptyDiv = document.createElement('div');
-  const textContainer = document.createElement('p');
-  const iconContainer = document.createElement('div');
-  const iconLinkWrapper = document.createElement('a');
-  const gitHubIcon = new Image();
+const mainWrapper = document.createElement('footer');
 
-  container.classList.add('footer-container');
-  emptyDiv.classList.add('empty');
-  textContainer.classList.add('footer-text-container');
-  iconContainer.classList.add('footer-icon-container');
+const container = document.createElement('div');
+container.classList.add('footer-container');
 
-  textContainer.innerText = "Footer Text";
+mainWrapper.append(container);
 
-  gitHubIcon.src = Icon;
-  gitHubIcon.alt = "GitHub Logo";
+const emptyDiv = document.createElement('div');
+emptyDiv.classList.add('empty');
 
-  iconLinkWrapper.appendChild(gitHubIcon);
-  iconContainer.appendChild(iconLinkWrapper);
+const textContainer = document.createElement('p');
+textContainer.classList.add('footer-text-container');
+textContainer.innerText = "Footer Text";
 
-  container.appendChild(emptyDiv);
-  container.appendChild(textContainer);
-  container.appendChild(iconContainer);
+const iconContainer = document.createElement('div');
+iconContainer.classList.add('footer-icon-container');
 
-  mainWrapper.appendChild(container);
+container.append(...[emptyDiv, textContainer, iconContainer]);
 
-  return mainWrapper;
-})();
+const iconLinkWrapper = document.createElement('a');
+
+iconContainer.append(iconLinkWrapper);
+
+const gitHubIcon = new Image();
+gitHubIcon.src = Icon;
+gitHubIcon.alt = "GitHub Logo";
+
+iconLinkWrapper.append(gitHubIcon);
+
+export default mainWrapper;
