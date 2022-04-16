@@ -1,0 +1,289 @@
+html, * {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+}
+
+#content {
+  display: grid;
+  grid-template-rows: 7% 1fr;
+  height: 100%;
+}
+
+.topbar {
+  background: lightgray;
+  padding: 0 1rem;
+  display: flex;
+  place-items: center;
+  /* min-width: 450px; */
+}
+
+.topbar > h1 {
+  flex: 1;
+}
+
+@media only screen and (max-width: 680px) {
+  header {
+    justify-content: center;
+  }
+
+  header > h1 {
+    display: none;
+  }
+  .navbar {
+    justify-self: center;
+  }
+}
+
+.navbar {
+  justify-self: flex-end;
+  margin-right: 1rem;
+}
+
+.navbar > nav {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navbar > nav li {
+  display: flex;
+}
+
+li > a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  margin-right: -1rem;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.hero-heading, .about-page-heading {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.hero-text {
+  font-size: 1.6rem;
+  width: 70%;
+  line-height: 1.6;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 3;
+}
+
+.hero-menu-button {
+  background: lightskyblue;
+  color: white;
+  text-decoration: none;
+  padding: 1rem 1.75rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  white-space: nowrap;
+  display: block;
+  width: 200px;
+}
+
+footer {
+  background: lightgray;
+  justify-self: stretch;
+}
+
+.footer-container {
+  display: flex;
+  padding: 0.25rem 1rem;
+  align-items: center;
+}
+
+
+.footer-text-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.empty {
+  flex: 1;
+}
+
+.github-icon-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.menu-page-heading {
+  display: flex;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.menu-page-description {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.menu-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2rem 8rem;
+  padding-bottom: 15px;
+}
+
+.menu-section {
+  padding: 1rem 2rem;
+}
+
+#menu-drinks-desserts-section {
+  display: flex;
+  gap: 2rem;
+  background: rgb(241, 241, 241);
+}
+
+.menu-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30px;
+  height: 80px;
+}
+
+.menu-section-header img {
+  width: 140px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.menu-section-heading {
+  flex: 1;
+  font-size: 1.4rem;
+  align-self: flex-end;
+  font-weight: 800;
+}
+
+.menu-option {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+#menu-drinks-desserts-section .menu-option {
+  gap: 2rem;
+  white-space: nowrap;
+}
+
+.menu-section-pricelist {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-page-text {
+  flex: 1;
+  font-size: 1.4rem;
+  width: 60%;
+  text-align: center;
+  line-height: 2;
+}
+
+.about-page-text > h2 {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.about-page-awards {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  gap: 3rem;
+}
+
+.award {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  height: 150px;
+  width: 150px;
+  background: lightblue;
+}
+
+.contact-box {
+  display: flex;
+  width: 100%;
+  gap: 3rem;
+  justify-content: space-evenly;
+  padding: 2rem 0;
+}
+
+.contact-box h2 {
+  font-weight: 600;
+  text-align: center;
+  margin: 2rem 0;
+  font-size: 1.8rem;
+}
+
+.contact-info, .contact-location-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 5em;
+}
+
+.contact-hours ul {
+  display: grid;
+  gap: 2rem;
+}
+
+.contact-hours li {
+  display: flex;
+  gap: 1rem;
+}
+
+.contact-hours li p {
+  flex: 1;
+  white-space: nowrap;
+}
+
+iframe {
+  padding: 0;
+  margin: 0;
+}
+
+@media only screen and (max-width: 950px) {
+  .menu-box {
+    grid-template-columns: 1fr;
+    margin-top: 30px;
+  }
+  .menu-page-heading {
+    margin-top: 30px;
+  }
+  .contact-box {
+    display: grid;
+  }
+}
