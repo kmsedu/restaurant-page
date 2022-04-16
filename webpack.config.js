@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -7,7 +6,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
   },
-  mode: "development",
+  mode: 'production',
   module: {
     rules: [
       {
@@ -20,4 +19,7 @@ module.exports = {
       },
     ],
   },
+  plugins: [new HtmlWebpackPlugin({
+    template: './src/index.html'
+  })],
 };
