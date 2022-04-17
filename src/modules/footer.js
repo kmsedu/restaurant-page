@@ -13,7 +13,7 @@ photoCredit.innerHTML = ''
 
 const textContainer = document.createElement('p');
 textContainer.classList.add('footer-text-container');
-textContainer.innerHTML = `Completed as part of<a href="https://www.theodinproject.com/" class="footer-odin-link">The Odin Project</a>`
+textContainer.innerHTML = `Created as part of<a href="https://www.theodinproject.com/" class="footer-odin-link">The Odin Project</a>`
 
 const iconContainer = document.createElement('div');
 iconContainer.classList.add('footer-icon-container');
