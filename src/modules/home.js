@@ -1,21 +1,20 @@
-export default (() => {
-  const mainWrapper = document.createElement('main');
-  const heroHeading = document.createElement('h2');
-  const heroText = document.createElement('p');
-  const menuButton = document.createElement('a');
+const mainWrapper = document.createElement('main');
+mainWrapper.classList.add('home-wrapper');
 
-  heroHeading.classList.add('hero-heading');
-  heroText.classList.add('hero-text');
-  menuButton.classList.add('hero-menu-button');
+const heroHeading = document.createElement('h2');
+heroHeading.classList.add('hero-heading');
+heroHeading.innerHTML = "We love <span class='altfont'>sushi!</span>";
 
-  heroHeading.textContent = "We love SUSHI";
-  heroText.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda voluptate maxime esse cupiditate, fugit possimus quis obcaecati fuga repudiandae magni aperiam quia incidunt. Aliquid sit officiis ullam repudiandae qui vitae!";
-  menuButton.textContent = "See the menu";
+const heroText = document.createElement('p');
+heroText.classList.add('hero-text');
+heroText.textContent = "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda voluptate maxime esse cupiditate, fugit possimus quis obcaecati fuga repudiandae magni aperiam quia incidunt. Aliquid sit officiis ullam repudiandae qui vitae!";
 
-  heroText.appendChild(menuButton);
+const menuButton = document.createElement('a');
+menuButton.classList.add('hero-menu-button');
+menuButton.textContent = "See the menu";
 
-  mainWrapper.appendChild(heroHeading);
-  mainWrapper.appendChild(heroText);
+heroText.append(menuButton);
 
-  return mainWrapper;
-})();
+mainWrapper.append(...[heroHeading, heroText]);
+
+export default mainWrapper;

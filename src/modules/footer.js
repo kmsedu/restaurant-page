@@ -7,19 +7,21 @@ container.classList.add('footer-container');
 
 mainWrapper.append(container);
 
-const emptyDiv = document.createElement('div');
-emptyDiv.classList.add('empty');
+const photoCredit = document.createElement('div');
+photoCredit.classList.add('photo-credit');
+photoCredit.innerHTML = ''
 
 const textContainer = document.createElement('p');
 textContainer.classList.add('footer-text-container');
-textContainer.innerText = "Footer Text";
+textContainer.innerHTML = `Completed as part of<a href="https://www.theodinproject.com/" class="footer-odin-link">The Odin Project</a>`
 
 const iconContainer = document.createElement('div');
 iconContainer.classList.add('footer-icon-container');
 
-container.append(...[emptyDiv, textContainer, iconContainer]);
+container.append(...[photoCredit, textContainer, iconContainer]);
 
 const iconLinkWrapper = document.createElement('a');
+iconLinkWrapper.href = "https://github.com/kmsedu";
 
 iconContainer.append(iconLinkWrapper);
 

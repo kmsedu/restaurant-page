@@ -64,6 +64,7 @@ const DESSERT_SECTION_MENU_OPTIONS = {
 }
 
 const mainWrapper = document.createElement('main');
+mainWrapper.classList.add("menu-wrapper")
 
 const heading = document.createElement('h2');
 heading.classList.add('menu-page-heading');

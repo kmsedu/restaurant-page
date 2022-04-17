@@ -1,5 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@400;700&family=Paytone+One&display=swap');
+
+:root {
+  --accent-color: #43a047;
+}
+
 html, * {
   box-sizing: border-box;
+  font-family: 'Hind', sans-serif;
 }
 
 body {
@@ -13,28 +20,21 @@ body {
 }
 
 .topbar {
-  background: lightgray;
+  background: black;
   padding: 0 1rem;
   display: flex;
   place-items: center;
-  /* min-width: 450px; */
 }
 
 .topbar > h1 {
   flex: 1;
+  font-family: 'Paytone One';
+  font-size: 3rem;
+  color: white;
 }
 
-@media only screen and (max-width: 680px) {
-  header {
-    justify-content: center;
-  }
-
-  header > h1 {
-    display: none;
-  }
-  .navbar {
-    justify-self: center;
-  }
+.green {
+  color: var(--accent-color);
 }
 
 .navbar {
@@ -59,6 +59,18 @@ li > a {
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
+li > a:hover {
+  border-bottom: 2px solid rgb(194, 78, 78);
+  padding-top: calc(1rem + 2px);
+}
+
+li > a:active {
+  border-bottom: 2px solid var(--accent-color);
+  outline: none;
 }
 
 main {
@@ -66,6 +78,38 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  background: #484848;
+}
+
+.home-wrapper {
+  background: url(../images/background2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color: rgb(32, 28, 28);
+  background-blend-mode: soft-light;
+}
+
+.menu-wrapper {
+  background: url(../images/background1.jpg);
+  background-color: rgb(10, 10, 10);
+  background-blend-mode: soft-light;
+}
+
+.about-wrapper {
+  background: url(../images/background4.jpg);
+  background-position: center;
+  background-size: cover;
+  background-color: rgb(38, 41, 43);
+  background-blend-mode: soft-light;
+}
+
+.contact-wrapper {
+  background: url(../images/background3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: rgb(41, 44, 46);
+  background-blend-mode: soft-light;
 }
 
 .hero-heading, .about-page-heading {
@@ -74,10 +118,21 @@ main {
   font-size: 3rem;
   white-space: nowrap;
   flex: 1;
+  color: white;
+}
+
+.hero-heading {
+  padding-top: 3rem;
+  color: white;
+  font-weight: 400;
+}
+
+.about-page-heading {
+  font-family: "Paytone One";
 }
 
 .hero-text {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   width: 70%;
   line-height: 1.6;
   display: flex;
@@ -87,23 +142,41 @@ main {
   justify-content: space-evenly;
   flex: 3;
   text-align: center;
+  color: white;
+  text-shadow: 0 0 3px #000000;
+  font-weight: 600;
+}
+
+.altfont {
+  font-family: 'Paytone One';
+  display: inline-block;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  font-size: 3.5rem;
+  color: var(--accent-color)
 }
 
 .hero-menu-button {
-  background: lightskyblue;
+  background: var(--accent-color);
   color: white;
   text-decoration: none;
   padding: 1rem 1.75rem;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   white-space: nowrap;
-  display: block;
   width: 200px;
   cursor: pointer;
+  text-align: center;
 }
 
 footer {
-  background: lightgray;
+  background: black;
+  color: white;
+}
+
+.footer-odin-link {
+  padding-left: 4px;
+  padding-top: 0;
 }
 
 .footer-container {
@@ -117,12 +190,18 @@ footer {
   flex: 1;
   display: flex;
   justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 600;
+  font-size: 1rem;
+  white-space: nowrap;
 }
 
-.empty {
+.photo-credit {
   flex: 1;
+  font-size: 0.9vw;
+}
+
+.photo-credit a, footer a {
+  color: var(--accent-color);
+  text-decoration: none;
 }
 
 .footer-icon-container {
@@ -135,6 +214,8 @@ footer {
   display: flex;
   align-items: center;
   font-size: 3rem;
+  color: white;
+  font-family: 'Paytone One'
 }
 
 .menu-page-description {
@@ -145,6 +226,8 @@ footer {
   width: 90%;
   font-size: 1.2rem;
   line-height: 1.6;
+  color: white;
+  font-weight: 600;
 }
 
 .menu-box {
@@ -153,6 +236,10 @@ footer {
   grid-template-rows: 1fr 1fr;
   gap: 2rem 8rem;
   padding-bottom: 15px;
+  color: white;
+  text-shadow: 0 0 3px black;
+  font-size: 1.2rem;
+  white-space: nowrap;
 }
 
 .menu-section {
@@ -162,7 +249,7 @@ footer {
 #menu-drinks-desserts-section {
   display: flex;
   gap: 2rem;
-  background: rgb(241, 241, 241);
+  background: rgba(36, 36, 36, 0.507);
 }
 
 .menu-section-header {
@@ -209,11 +296,14 @@ footer {
   width: 60%;
   text-align: center;
   line-height: 2;
+  color: white;
+  text-shadow: 0 0 5px black;
 }
 
 .about-page-text > h2 {
   font-weight: 600;
   font-size: 1.6rem;
+  text-shadow: 0 0 3px black;
 }
 
 .about-page-awards {
@@ -229,7 +319,11 @@ footer {
   place-items: center;
   height: 150px;
   width: 150px;
-  background: lightblue;
+}
+
+.award span {
+  font-size: 8rem;
+  color: #fdd835;
 }
 
 .contact-box {
@@ -244,7 +338,18 @@ footer {
   font-weight: 600;
   text-align: center;
   margin: 2rem 0;
-  font-size: 1.8rem;
+  font-size: 2rem;
+  font-family: 'Paytone One';
+  color: white;
+  text-shadow: 0 0 5px black;
+}
+
+li p:first-child {
+  font-weight: 600;
+}
+
+li p:nth-child(2) {
+  opacity: 0.7;
 }
 
 .contact-info, .contact-location-info {
@@ -254,7 +359,9 @@ footer {
   justify-content: space-between;
   align-items: center;
   text-align: center;
-  gap: 5em;
+  color: white;
+  font-size: 1.6rem;
+  gap: 1rem;
 }
 
 .contact-hours ul {
@@ -272,12 +379,31 @@ footer {
   white-space: nowrap;
 }
 
+.contact-details {
+  font-weight: 600;
+  line-height: 1.6;
+  text-shadow: 0 0 3px #000000;
+}
+
 iframe {
   padding: 0;
   margin: 0;
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 680px) {
+  header {
+    justify-content: center;
+  }
+
+  header > h1 {
+    display: none;
+  }
+  .navbar {
+    justify-self: center;
+  }
+}
+
+@media only screen and (max-width: 970px) {
   .menu-box {
     grid-template-columns: 1fr;
     margin-top: 30px;
@@ -287,5 +413,8 @@ iframe {
   }
   .contact-box {
     display: grid;
+  }
+  .photo-credit {
+    font-size: 0.6rem;
   }
 }

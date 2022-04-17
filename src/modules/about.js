@@ -1,4 +1,5 @@
 const mainWrapper = document.createElement('main');
+mainWrapper.classList.add('about-wrapper')
 
 const heading = document.createElement('h2');
 heading.classList.add('about-page-heading');
@@ -37,6 +38,7 @@ awards.classList.add('about-page-awards');
 for (let i = 0; i < 3; i++) {
   const award = document.createElement('div');
   award.classList.add('award');
+  award.innerHTML = '<span class="material-icons">star</span>';
 
   awards.append(award);
 }
